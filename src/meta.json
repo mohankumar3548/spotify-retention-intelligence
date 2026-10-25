@@ -1,0 +1,51 @@
+{
+  "num": "02",
+  "area": "Marketing",
+  "product": "Churn & Retention Intelligence",
+  "title": "Spotify Churn Radar",
+  "company": "Spotify",
+  "why": "Spotify runs on monthly subscriptions and competes with Apple Music and YouTube Music for the same listeners. This tool scores every subscriber for churn risk, explains why, and assigns a retention play.",
+  "problem": "A subscription business is experiencing increasing customer churn despite continued marketing expenditure. Develop an AI system that identifies behavioral patterns associated with churn, segments at-risk customers, determines potential causes, and generates personalized retention strategies.",
+  "data_note": "3,000 Premium subscribers with 90 days of listening, billing and support history, scaled 2,000x to a 6M-subscriber market (sample data).",
+  "steps": [
+    {
+      "step": "Collect subscriber data",
+      "detail": "Listening, skips, logins, billing, plan, support tickets, reviews"
+    },
+    {
+      "step": "Engineer behaviour features",
+      "detail": "Change in weekly listening, days since login, failed payments"
+    },
+    {
+      "step": "Train churn classifier",
+      "detail": "Logistic regression, 70/30 split, class-weighted"
+    },
+    {
+      "step": "Explain each user",
+      "detail": "Per-user feature contributions (SHAP-style) and global drivers"
+    },
+    {
+      "step": "Time to churn",
+      "detail": "Monthly hazard turned into expected months until cancel"
+    },
+    {
+      "step": "Segment at-risk users",
+      "detail": "Group by each user's top churn driver"
+    },
+    {
+      "step": "Text signals",
+      "detail": "Keyword sentiment on reviews and tickets"
+    },
+    {
+      "step": "Retention plays",
+      "detail": "Rules + AI analyst pick an action per segment"
+    }
+  ],
+  "questions": [
+    "What is the biggest reason people cancel?",
+    "Which segment should we target first and why?",
+    "Write a win-back email for the price-sensitive group",
+    "How accurate is the churn model?"
+  ],
+  "author": "K Mohan Kumar"
+}

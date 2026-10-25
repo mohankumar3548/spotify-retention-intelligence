@@ -1,0 +1,210 @@
+{
+  "title": "Spotify Churn Radar",
+  "company": "Spotify",
+  "kpis": [
+    {
+      "label": "90-day churn",
+      "value": "14.0%",
+      "note": "420 of 3,000 subscribers"
+    },
+    {
+      "label": "Active users at risk",
+      "value": "334,000",
+      "note": "Score >= 35%, scaled to 6M base"
+    },
+    {
+      "label": "Revenue at risk",
+      "value": "$52.7M",
+      "note": "Annual subscription value"
+    },
+    {
+      "label": "Revenue saved",
+      "value": "$13.2M",
+      "note": "At 25% play success"
+    },
+    {
+      "label": "Model AUC",
+      "value": "0.86",
+      "note": "1.0 = perfect, 0.5 = coin flip"
+    }
+  ],
+  "algorithm": [
+    {
+      "step": "Collect subscriber data",
+      "output": "3,000 subscribers, 14.0% churned in 90 days"
+    },
+    {
+      "step": "Engineer behaviour features",
+      "output": "10 behaviour features per subscriber"
+    },
+    {
+      "step": "Train churn classifier",
+      "output": "Test AUC 0.858 on 900 held-out users"
+    },
+    {
+      "step": "Explain each user",
+      "output": "Top driver: Listening change (90d)"
+    },
+    {
+      "step": "Time to churn",
+      "output": "Median time to cancel 2.2 months"
+    },
+    {
+      "step": "Segment at-risk users",
+      "output": "4 segments, 167 of the sample at risk"
+    },
+    {
+      "step": "Text signals",
+      "output": "Top complaint theme among churners: Price"
+    },
+    {
+      "step": "Retention plays",
+      "output": "4 plays assigned"
+    }
+  ],
+  "tables": {
+    "Retention plan by segment": [
+      {
+        "segment": "Disengaged listeners",
+        "users": 224000,
+        "avg_risk": 0.5,
+        "months_to_cancel": 2.09,
+        "annual_revenue_at_risk": 36189120.0,
+        "play": "Re-engagement: a fresh Daily Mix and a push for their most played artist"
+      },
+      {
+        "segment": "Payment friction",
+        "users": 80000,
+        "avg_risk": 0.5,
+        "months_to_cancel": 2.1,
+        "annual_revenue_at_risk": 11942400.0,
+        "play": "Payment rescue: retry on payday, card update reminder, 7-day grace period"
+      },
+      {
+        "segment": "Price-sensitive",
+        "users": 24000,
+        "avg_risk": 0.4,
+        "months_to_cancel": 2.56,
+        "annual_revenue_at_risk": 3693120.0,
+        "play": "Plan-switch offer: Duo or annual plan at a lower monthly cost"
+      },
+      {
+        "segment": "Service issues",
+        "users": 6000,
+        "avg_risk": 0.43,
+        "months_to_cancel": 2.36,
+        "annual_revenue_at_risk": 863280.0,
+        "play": "Support recovery: priority callback and a free month for open tickets"
+      }
+    ],
+    "Highest-value users to save first": [
+      {
+        "user_id": "U12425",
+        "plan": "Family",
+        "risk": 0.78,
+        "top_driver": "Failed payments",
+        "segment": "Payment friction",
+        "action": "Payment rescue"
+      },
+      {
+        "user_id": "U12563",
+        "plan": "Duo",
+        "risk": 0.76,
+        "top_driver": "Listening change (90d)",
+        "segment": "Disengaged listeners",
+        "action": "Re-engagement"
+      },
+      {
+        "user_id": "U12612",
+        "plan": "Duo",
+        "risk": 0.75,
+        "top_driver": "Days since last login",
+        "segment": "Disengaged listeners",
+        "action": "Re-engagement"
+      },
+      {
+        "user_id": "U12867",
+        "plan": "Duo",
+        "risk": 0.73,
+        "top_driver": "Listening change (90d)",
+        "segment": "Disengaged listeners",
+        "action": "Re-engagement"
+      },
+      {
+        "user_id": "U11421",
+        "plan": "Duo",
+        "risk": 0.7,
+        "top_driver": "Days since last login",
+        "segment": "Disengaged listeners",
+        "action": "Re-engagement"
+      },
+      {
+        "user_id": "U12431",
+        "plan": "Family",
+        "risk": 0.58,
+        "top_driver": "Failed payments",
+        "segment": "Payment friction",
+        "action": "Payment rescue"
+      },
+      {
+        "user_id": "U12787",
+        "plan": "Duo",
+        "risk": 0.68,
+        "top_driver": "Failed payments",
+        "segment": "Payment friction",
+        "action": "Payment rescue"
+      },
+      {
+        "user_id": "U10709",
+        "plan": "Duo",
+        "risk": 0.67,
+        "top_driver": "Days since last login",
+        "segment": "Disengaged listeners",
+        "action": "Re-engagement"
+      },
+      {
+        "user_id": "U12481",
+        "plan": "Individual",
+        "risk": 0.93,
+        "top_driver": "Failed payments",
+        "segment": "Payment friction",
+        "action": "Payment rescue"
+      },
+      {
+        "user_id": "U11180",
+        "plan": "Family",
+        "risk": 0.56,
+        "top_driver": "Days since last login",
+        "segment": "Disengaged listeners",
+        "action": "Re-engagement"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "title": "Disengaged listeners: Re-engagement",
+      "body": "224,000 users at 50% average risk, about 2.1 months from cancelling. a fresh Daily Mix and a push for their most played artist.",
+      "impact": "$9.0M/yr saved"
+    },
+    {
+      "title": "Payment friction: Payment rescue",
+      "body": "80,000 users at 50% average risk, about 2.1 months from cancelling. retry on payday, card update reminder, 7-day grace period.",
+      "impact": "$3.0M/yr saved"
+    },
+    {
+      "title": "Price-sensitive: Plan-switch offer",
+      "body": "24,000 users at 40% average risk, about 2.6 months from cancelling. Duo or annual plan at a lower monthly cost.",
+      "impact": "$923K/yr saved"
+    },
+    {
+      "title": "Service issues: Support recovery",
+      "body": "6,000 users at 43% average risk, about 2.4 months from cancelling. priority callback and a free month for open tickets.",
+      "impact": "$216K/yr saved"
+    },
+    {
+      "title": "Stop discounting users the model calls safe",
+      "body": "4,128,000 users score under 15%. Take them out of win-back offers and keep the budget for the segments above.",
+      "impact": "Lower CAC"
+    }
+  ]
+}

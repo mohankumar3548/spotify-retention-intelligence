@@ -1,0 +1,11 @@
+user_id,plan,risk,top_driver,segment,action
+U12425,Family,0.78,Failed payments,Payment friction,Payment rescue
+U12563,Duo,0.76,Listening change (90d),Disengaged listeners,Re-engagement
+U12612,Duo,0.75,Days since last login,Disengaged listeners,Re-engagement
+U12867,Duo,0.73,Listening change (90d),Disengaged listeners,Re-engagement
+U11421,Duo,0.7,Days since last login,Disengaged listeners,Re-engagement
+U12431,Family,0.58,Failed payments,Payment friction,Payment rescue
+U12787,Duo,0.68,Failed payments,Payment friction,Payment rescue
+U10709,Duo,0.67,Days since last login,Disengaged listeners,Re-engagement
+U12481,Individual,0.93,Failed payments,Payment friction,Payment rescue
+U11180,Family,0.56,Days since last login,Disengaged listeners,Re-engagement
